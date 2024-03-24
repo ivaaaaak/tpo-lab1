@@ -1,9 +1,12 @@
 package org.example;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
+@Getter
 public class Algorithm {
     private final HashMap<Integer, LinkedHashSet<Integer>> relations;
     private final LinkedList<Integer> visitedOrder;
@@ -16,18 +19,6 @@ public class Algorithm {
 
         for (int i = 0; i < vertices; i++)
             relations.put(i, new LinkedHashSet<>());
-    }
-
-    public HashMap<Integer, LinkedHashSet<Integer>> getRelations() {
-        return relations;
-    }
-
-    public LinkedList<Integer> getVisitedOrder() {
-        return visitedOrder;
-    }
-
-    public boolean[] getVisited() {
-        return visited;
     }
 
     public void addEdge(int src, int dst) {
